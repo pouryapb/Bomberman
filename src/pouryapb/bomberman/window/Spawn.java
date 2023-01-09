@@ -136,29 +136,31 @@ public class Spawn {
 
 		if (!spawned) {
 			// spawning brick walls
-			for (int i = 0; i < walls; i++) {
-				x = Game.clamp(((r.nextInt(Game.levelWidth / 32)) * 32), (1 * 32), Game.levelWidth - 32);
-				y = Game.clamp(((r.nextInt(Game.HEIGHT / 32)) * 32), (1 * 32), Game.HEIGHT - 32);
+			// for (int i = 0; i < walls; i++) {
+			// x = Game.clamp(((r.nextInt(Game.levelWidth / 32)) * 32), (1 * 32),
+			// Game.levelWidth - 32);
+			// y = Game.clamp(((r.nextInt(Game.HEIGHT / 32)) * 32), (1 * 32), Game.HEIGHT -
+			// 32);
 
-				// Detecting empty places
-				boolean empty = false;
-				for (int j = 0; j < handler.object.size(); j++) {
-					GameObject tempObject = handler.object.get(j);
+			// // Detecting empty places
+			// boolean empty = false;
+			// for (int j = 0; j < handler.object.size(); j++) {
+			// GameObject tempObject = handler.object.get(j);
 
-					if (tempObject.getBounds().intersects(new Rectangle(x, y, 32, 32))) {
-						empty = false;
-						break;
-					} else {
-						empty = true;
-					}
-				}
-				if (empty && !(x < (32 * 3) && y < (32 * 3))) {
-					handler.addObject(new Block(x, y, ID.BRICK_WALL));
-					empty = false;
-				} else {
-					i--;
-				}
-			}
+			// if (tempObject.getBounds().intersects(new Rectangle(x, y, 32, 32))) {
+			// empty = false;
+			// break;
+			// } else {
+			// empty = true;
+			// }
+			// }
+			// if (empty && !(x < (32 * 3) && y < (32 * 3))) {
+			// handler.addObject(new Block(x, y, ID.BRICK_WALL));
+			// empty = false;
+			// } else {
+			// i--;
+			// }
+			// }
 			// spawning red enemies
 			for (int i = 0; i < redEnemy; i++) {
 				x = Game.clamp((((r.nextInt(Game.levelWidth / 64) * 2) + 1) * 32), (5 * 32),

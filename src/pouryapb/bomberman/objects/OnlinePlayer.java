@@ -224,23 +224,23 @@ public class OnlinePlayer extends GameObject {
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x, y, width, height);
+		return new Rectangle((int) x, (int) y, width, height);
 	}
 
 	public Rectangle getBoundsButtom() {
-		return new Rectangle(x + (width / 2) - ((width / 2) / 2), y + height / 2, width / 2, height / 2);
+		return new Rectangle((int) x + (width / 2) - ((width / 2) / 2), (int) y + height / 2, width / 2, height / 2);
 	}
 
 	public Rectangle getBoundsTop() {
-		return new Rectangle(x + (width / 2) - ((width / 2) / 2), y, width / 2, height / 2);
+		return new Rectangle((int) x + (width / 2) - ((width / 2) / 2), (int) y, width / 2, height / 2);
 	}
 
 	public Rectangle getBoundsRight() {
-		return new Rectangle(x + width - 5, y + 5, 5, height - 10);
+		return new Rectangle((int) x + width - 5, (int) y + 5, 5, height - 10);
 	}
 
 	public Rectangle getBoundsLeft() {
-		return new Rectangle(x, y + 5, 5, height - 10);
+		return new Rectangle((int) x, (int) y + 5, 5, height - 10);
 	}
 
 	public void render(Graphics g) {
@@ -248,24 +248,24 @@ public class OnlinePlayer extends GameObject {
 		// the right animation when moving
 		if (velX != 0 || velY != 0) {
 			if (velX > 0)
-				playerWalkRight.drawAnimation(g, x, y);
+				playerWalkRight.drawAnimation(g, (int) x, (int) y);
 			if (velX < 0)
-				playerWalkLeft.drawAnimation(g, x, y);
+				playerWalkLeft.drawAnimation(g, (int) x, (int) y);
 			if (velY > 0)
-				playerWalkDown.drawAnimation(g, x, y);
+				playerWalkDown.drawAnimation(g, (int) x, (int) y);
 			if (velY < 0)
-				playerWalkUp.drawAnimation(g, x, y);
+				playerWalkUp.drawAnimation(g, (int) x, (int) y);
 		}
 		// the right texture when not moving
 		else {
 			if (facing == 0)
-				g.drawImage(tex.player[0], x, y, null);
+				g.drawImage(tex.player[0], (int) x, (int) y, null);
 			if (facing == 1)
-				g.drawImage(tex.player[3], x, y, null);
+				g.drawImage(tex.player[3], (int) x, (int) y, null);
 			if (facing == 2)
-				g.drawImage(tex.player[6], x, y, null);
+				g.drawImage(tex.player[6], (int) x, (int) y, null);
 			if (facing == 3)
-				g.drawImage(tex.player[9], x, y, null);
+				g.drawImage(tex.player[9], (int) x, (int) y, null);
 		}
 	}
 

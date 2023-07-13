@@ -37,7 +37,7 @@ public class Blast extends GameObject {
 	private BlastType type;
 	private Texture tex = new Texture();
 
-	public Blast(int x, int y, ID id, Handler handler, BlastType type) {
+	public Blast(double x, double y, ID id, Handler handler, BlastType type) {
 		super(x, y, id);
 		this.handler = handler;
 		this.type = type;
@@ -62,16 +62,16 @@ public class Blast extends GameObject {
 	public void render(Graphics g) {
 
 		if (type == BlastType.HORIZONTAL) {
-			g.drawImage(tex.blast[1], x, y, null);
+			g.drawImage(tex.blast[1], (int) x, (int) y, null);
 		} else if (type == BlastType.VERTICAL) {
-			g.drawImage(tex.blast[0], x, y, null);
+			g.drawImage(tex.blast[0], (int) x, (int) y, null);
 		} else if (type == BlastType.CENTER) {
-			g.drawImage(tex.blast[2], x, y, null);
+			g.drawImage(tex.blast[2], (int) x, (int) y, null);
 		}
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x + 2, y + 2, 30, 30);
+		return new Rectangle((int) x + 2, (int) y + 2, 30, 30);
 	}
 
 	public void setHit(boolean b) {

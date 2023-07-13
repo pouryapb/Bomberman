@@ -83,11 +83,11 @@ public class Star extends GameObject {
 
 	public void render(Graphics g) {
 
-		g.drawImage(tex.star, x, y, null);
+		g.drawImage(tex.star, (int) x, (int) y, null);
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x, y, 32, 32);
+		return new Rectangle((int) x, (int) y, 32, 32);
 	}
 
 }

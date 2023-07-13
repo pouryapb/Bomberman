@@ -76,11 +76,11 @@ public class Heart extends GameObject {
 
 		g.setFont(f);
 		g.setColor(Color.red);
-		g.drawString("\u2665", x, y + 32);
+		g.drawString("\u2665", (int) x, (int) y + 32);
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x, y, 32, 32);
+		return new Rectangle((int) x, (int) y, 32, 32);
 	}
 
 }

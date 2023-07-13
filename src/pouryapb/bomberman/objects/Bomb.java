@@ -93,7 +93,7 @@ public class Bomb extends GameObject {
 				for (var j = 0; j < handler.object.size(); j++) {
 					GameObject tempObject = handler.object.get(j);
 
-					if (tempObject.getBounds().intersects(new Rectangle(x, (y - ((i + 1) * 32)), 32, 32))
+					if (tempObject.getBounds().intersects(new Rectangle((int) x, ((int) y - ((i + 1) * 32)), 32, 32))
 							&& tempObject.getId() != ID.PLAYER && tempObject.getId() != ID.ENEMY_RED
 							&& tempObject.getId() != ID.ENEMY_YELLOW) {
 						if (tempObject.getId() == ID.BRICK_WALL) {
@@ -117,7 +117,7 @@ public class Bomb extends GameObject {
 				for (int j = 0; j < handler.object.size(); j++) {
 					GameObject tempObject = handler.object.get(j);
 
-					if (tempObject.getBounds().intersects(new Rectangle(x, (y + ((i + 1) * 32)), 32, 32))
+					if (tempObject.getBounds().intersects(new Rectangle((int) x, ((int) y + ((i + 1) * 32)), 32, 32))
 							&& tempObject.getId() != ID.PLAYER && tempObject.getId() != ID.ENEMY_RED
 							&& tempObject.getId() != ID.ENEMY_YELLOW) {
 						if (tempObject.getId() == ID.BRICK_WALL) {
@@ -141,7 +141,7 @@ public class Bomb extends GameObject {
 				for (int j = 0; j < handler.object.size(); j++) {
 					GameObject tempObject = handler.object.get(j);
 
-					if (tempObject.getBounds().intersects(new Rectangle((x + ((i + 1) * 32)), y, 32, 32))
+					if (tempObject.getBounds().intersects(new Rectangle(((int) x + ((i + 1) * 32)), (int) y, 32, 32))
 							&& tempObject.getId() != ID.PLAYER && tempObject.getId() != ID.ENEMY_RED
 							&& tempObject.getId() != ID.ENEMY_YELLOW) {
 						if (tempObject.getId() == ID.BRICK_WALL) {
@@ -165,7 +165,7 @@ public class Bomb extends GameObject {
 				for (int j = 0; j < handler.object.size(); j++) {
 					GameObject tempObject = handler.object.get(j);
 
-					if (tempObject.getBounds().intersects(new Rectangle((x - ((i + 1) * 32)), y, 32, 32))
+					if (tempObject.getBounds().intersects(new Rectangle(((int) x - ((i + 1) * 32)), (int) y, 32, 32))
 							&& tempObject.getId() != ID.PLAYER && tempObject.getId() != ID.ENEMY_RED
 							&& tempObject.getId() != ID.ENEMY_YELLOW) {
 						if (tempObject.getId() == ID.BRICK_WALL) {
@@ -190,11 +190,11 @@ public class Bomb extends GameObject {
 	}
 
 	public void render(Graphics g) {
-		a.drawAnimation(g, x, y);
+		a.drawAnimation(g, (int) x, (int) y);
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x, y, 32, 32);
+		return new Rectangle((int) x, (int) y, 32, 32);
 	}
 
 	/**

@@ -30,16 +30,16 @@ public class Block extends GameObject {
 
 	public Rectangle getBounds() {
 
-		return new Rectangle(x, y, 32, 32);
+		return new Rectangle((int) x, (int) y, 32, 32);
 	}
 
 	public void render(Graphics g) {
 
 		if (id == ID.STONE_WALL) {
-			g.drawImage(tex.block[0], x, y, null);
+			g.drawImage(tex.block[0], (int) x, (int) y, null);
 		}
 		if (id == ID.BRICK_WALL) {
-			g.drawImage(tex.block[1], x, y, null);
+			g.drawImage(tex.block[1], (int) x, (int) y, null);
 		}
 
 	}

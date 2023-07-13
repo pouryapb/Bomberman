@@ -12,10 +12,10 @@ import java.awt.Rectangle;
 
 public abstract class GameObject {
 
-	protected int x, y;
+	protected double x, y;
 	protected ID id;
-	protected int velX;
-	protected int velY;
+	protected double velX;
+	protected double velY;
 
 	/**
 	 * GameObject Constructor
@@ -25,7 +25,7 @@ public abstract class GameObject {
 	 * @param id : objects ID
 	 */
 
-	protected GameObject(int x, int y, ID id) {
+	protected GameObject(double x, double y, ID id) {
 		this.x = x;
 		this.y = y;
 		this.id = id;
@@ -53,19 +53,19 @@ public abstract class GameObject {
 
 	public abstract Rectangle getBounds();
 
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
@@ -77,19 +77,19 @@ public abstract class GameObject {
 		return id;
 	}
 
-	public void setVelX(int velX) {
+	public void setVelX(double velX) {
 		this.velX = velX;
 	}
 
-	public void setVelY(int velY) {
+	public void setVelY(double velY) {
 		this.velY = velY;
 	}
 
-	public int getVelX() {
+	public double getVelX() {
 		return velX;
 	}
 
-	public int getVelY() {
+	public double getVelY() {
 		return velY;
 	}
 

@@ -58,7 +58,7 @@ public class Enemy extends GameObject {
 		x += velX;
 		y += velY;
 
-		int[] vel = { 1, -1 };
+		double[] vel = { 1, -1 };
 
 		timer++;
 
@@ -78,28 +78,30 @@ public class Enemy extends GameObject {
 	}
 
 	public void render(Graphics g) {
+		int xi = (int) x;
+		int yi = (int) y;
 
 		if (id == ID.ENEMY_RED) {
 
 			if (velX > 0)
-				g.drawImage(tex.enemy[7], x, y, null);
+				g.drawImage(tex.enemy[7], xi, yi, null);
 			if (velX < 0)
-				g.drawImage(tex.enemy[6], x, y, null);
+				g.drawImage(tex.enemy[6], xi, yi, null);
 			if (velY > 0)
-				g.drawImage(tex.enemy[4], x, y, null);
+				g.drawImage(tex.enemy[4], xi, yi, null);
 			if (velY < 0)
-				g.drawImage(tex.enemy[5], x, y, null);
+				g.drawImage(tex.enemy[5], xi, yi, null);
 		}
 		if (id == ID.ENEMY_YELLOW) {
 
 			if (velX > 0)
-				g.drawImage(tex.enemy[3], x, y, null);
+				g.drawImage(tex.enemy[3], xi, yi, null);
 			if (velX < 0)
-				g.drawImage(tex.enemy[2], x, y, null);
+				g.drawImage(tex.enemy[2], xi, yi, null);
 			if (velY > 0)
-				g.drawImage(tex.enemy[0], x, y, null);
+				g.drawImage(tex.enemy[0], xi, yi, null);
 			if (velY < 0)
-				g.drawImage(tex.enemy[1], x, y, null);
+				g.drawImage(tex.enemy[1], xi, yi, null);
 		}
 	}
 
@@ -120,18 +122,22 @@ public class Enemy extends GameObject {
 				// Top
 				if (getBoundsTop().intersects(tempObject.getBounds())) {
 					y = (int) tempObject.getBounds().getY() + 32;
+					velY *= -1;
 				}
 				// Bottom
 				if (getBoundsButtom().intersects(tempObject.getBounds())) {
 					y = (int) tempObject.getBounds().getY() - 32;
+					velY *= -1;
 				}
 				// Right
 				if (getBoundsRight().intersects(tempObject.getBounds())) {
 					x = (int) tempObject.getBounds().getX() - 32;
+					velX *= -1;
 				}
 				// Left
 				if (getBoundsLeft().intersects(tempObject.getBounds())) {
 					x = (int) tempObject.getBounds().getX() + 32;
+					velX *= -1;
 				}
 			}
 
@@ -161,23 +167,23 @@ public class Enemy extends GameObject {
 	}
 
 	public Rectangle getBounds() {
-		return new Rectangle(x + 3, y + 3, width - 6, height - 6);
+		return new Rectangle((int) x + 3, (int) y + 3, width - 6, height - 6);
 	}
 
 	public Rectangle getBoundsButtom() {
-		return new Rectangle(x + (width / 2) - ((width / 2) / 2), y + height / 2, width / 2, height / 2);
+		return new Rectangle((int) x + (width / 2) - ((width / 2) / 2), (int) y + height / 2, width / 2, height / 2);
 	}
 
 	public Rectangle getBoundsTop() {
-		return new Rectangle(x + (width / 2) - ((width / 2) / 2), y, width / 2, height / 2);
+		return new Rectangle((int) x + (width / 2) - ((width / 2) / 2), (int) y, width / 2, height / 2);
 	}
 
 	public Rectangle getBoundsRight() {
-		return new Rectangle(x + width - 5, y + 5, 5, height - 10);
+		return new Rectangle((int) x + width - 5, (int) y + 5, 5, height - 10);
 	}
 
 	public Rectangle getBoundsLeft() {
-		return new Rectangle(x, y + 5, 5, height - 10);
+		return new Rectangle((int) x, (int) y + 5, 5, height - 10);
 	}
 
 }

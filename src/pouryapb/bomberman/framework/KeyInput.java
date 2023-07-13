@@ -75,8 +75,8 @@ public class KeyInput extends KeyAdapter {
 
 				// making bomb with space bar
 				if (key == KeyEvent.VK_SPACE && ((Player) tempObject).getBombLimit() > 0) {
-					int x = (tempObject.getX() + 16) / 32;
-					int y = (tempObject.getY() + 16) / 32;
+					int x = (int) ((tempObject.getX() + 16) / 32);
+					int y = (int) ((tempObject.getY() + 16) / 32);
 
 					handler.addObject(new Bomb(x * 32, y * 32, ID.BOMB, handler, tempObject));
 					((Player) tempObject).setBombLimit(((Player) tempObject).getBombLimit() - 1);
